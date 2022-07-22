@@ -16,13 +16,18 @@ public class Comment {
     private Long id;
 
     @Column
-    private String content;
+    private String reply;
 
-    @ManyToOne
-    private User user;
+    @Column
+    private String replyWriter;
 
     @ManyToOne
     @JoinColumn(name = "post_id")
     private Board board;
 
+    public Comment(String reply, String replyWriter, Board board) {
+        this.reply=reply;
+        this.replyWriter=replyWriter;
+        this.board=board;
+    }
 }

@@ -42,6 +42,12 @@
 
         }
     </style>
+
+    <script>
+        function needLogin(){
+            alert("로그인이 필요한 기능입니다.");
+        }
+    </script>
 </head>
 <body>
 
@@ -52,18 +58,18 @@
 
             <c:choose>
                 <c:when test="${!empty sessionScope.loginUser.nickName}">
-
-
                     <div class = "sign-in">
 
                         <div>
-                            <h2>환영합니다!!!!</h2>
+                            <h2>환영합니다 ${sessionScope.loginUser.nickName}님!</h2>
                         </div>
                         <div>
                         <form action="<c:url value='/logout' />">
                             <input type="submit" class="btn btn-outline-primary" value="로그아웃"/>
                         </form>
+
                             <button type="button" class="btn btn-success" onclick="location.href='/insertBoardView'">글쓰기</button>
+
                         </div>
                     </div>
                 </c:when>
@@ -72,6 +78,7 @@
                        <div class = "sign-in">
                        <form action="<c:url value='/login' />" method="post">
                            <div>
+                           ${messege}
                                <p>ID: <input type="text" name="nickName"></p>
                                <p>PW: <input type="text" name="password"></p>
                            </div>
@@ -79,12 +86,20 @@
                                <input type="submit" class="btn btn-outline-primary" value="로그인"/>
                        </form>
                                <button type="button" class="btn btn-outline-secondary" onclick="location.href='/signupView'">회원가입</button>
-                               <button type="button" class="btn btn-success" onclick="location.href='/insertBoardView'">글쓰기</button>
+                               <button type="button" class="btn btn-success" onclick="needLogin()">글쓰기</button>
 
                            </div>
                        </div>
                 </c:otherwise>
             </c:choose>
+
+
+            <c:if test="${!empty messege}">
+                 <script type="text/javascript">
+                    alert("${messege}");
+
+                   </script>
+            </c:if>
 
     </div>
 

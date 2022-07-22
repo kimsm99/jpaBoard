@@ -56,7 +56,9 @@ public class UserController {
 
         System.out.println(nickName+"   "+password);
         User user = userRepository.findByNickNameAndPassword(nickName, password);
+
         if (user == null) {
+
             System.out.println("여기들어옴11");
 
             return "redirect:/boardView";

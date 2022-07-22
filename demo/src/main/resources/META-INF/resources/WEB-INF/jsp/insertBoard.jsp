@@ -56,7 +56,7 @@
                     <td style="background-color: #c5d4d4; color: black">내용</td>
                     <td><textarea style="width:95%" name="content" cols="40" rows="10"></textarea></td>
                 </tr>
-                <input style="width:95%" type="text" name="writer" value="${sessionScope.loginUser.nickName}"/>
+                <input style="width:95%" type="hidden" name="writer" value="${sessionScope.loginUser.nickName}"/>
 
 
             </table>

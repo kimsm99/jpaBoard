@@ -8,6 +8,7 @@ package com.example.demo.post;
         import org.springframework.web.bind.annotation.*;
         import org.springframework.web.servlet.ModelAndView;
 
+        import javax.transaction.Transactional;
         import java.util.List;
 
 @Controller
@@ -26,8 +27,7 @@ public class BoardController {
     //글 등록
     @RequestMapping("/insertBoard")
     public String insertBoard(@RequestParam("title") String title,@RequestParam("content") String content,@RequestParam("writer") String writer) {
-        Board board = new Board(title, content, writer);
-        boardRepository.save(board);
+        boardService.saveBoard(title, content, writer);
         return "redirect:/boardView";
     }
 
@@ -74,6 +74,7 @@ public class BoardController {
 
     //수정
     @RequestMapping(value="/updateBoard")
+
     public String updateBoard(@RequestParam Long id, @RequestParam("title") String title, @RequestParam("content") String content){
         boardService.updateBoard(id, title, content);
         return "redirect:/boardView";

@@ -43,7 +43,7 @@
                 <c:if test="${board.writer eq sessionScope.loginUser.nickName}">
                 <input onclick="location.href='/updateBoardView?id=${board.id}'" style="margin:10px;  margin-left:80% " type="submit" value="수정"/>
                 <input onclick="location.href='/deleteBoard?id=${board.id}'" style="margin:10px;  margin-left:80% " type="submit" value="삭제"/>
-                </c:if>>
+                </c:if>
             </td>
         </div>
 

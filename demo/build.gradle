@@ -28,6 +28,10 @@ dependencies {
 	runtimeOnly 'mysql:mysql-connector-java'
 	annotationProcessor 'org.projectlombok:lombok'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	compileOnly 'org.mariadb.jdbc:mariadb-java-client:2.7.2'
+
+
+
 
 //	compileOnly 'org.apache.tomcat.embed:tomcat-embed-jasper'
 //	compileOnly 'javax.servlet:jstl:1.2'
