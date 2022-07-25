@@ -26,7 +26,7 @@ public class BoardController {
 
 
         //글 등록
-    @RequestMapping("/insertBoard")
+    @PostMapping("/insertBoard")
     public String insertBoard(Board board) {
         boardService.saveBoard(board.getTitle(), board.getContent(), board.getWriter());
         return "redirect:/boardView";
@@ -35,7 +35,7 @@ public class BoardController {
 
 
     //게시글 전체 보기
-    @RequestMapping("/boardView")
+    @GetMapping(value ="/boardView")
     public String getBoardList(Model model) {
         List<Board> boardList = boardRepository.findAllByOrderByModifiedAtDesc();
         model.addAttribute("boardList", boardList);
@@ -44,7 +44,7 @@ public class BoardController {
     }
 
     //상세조회
-    @RequestMapping("/getDetail")
+    @GetMapping("/getDetail")
     public String getBoard(@RequestParam Long id, Model model) {
         Board board = boardRepository.findById(id).orElseThrow(
                 () -> new NullPointerException("게시글 존재 안함")

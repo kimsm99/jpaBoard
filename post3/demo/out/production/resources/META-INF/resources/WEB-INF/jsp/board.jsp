@@ -119,7 +119,7 @@
 <c:forEach var="board" items="${boardList}">
     <a href="/getDetail?id=${board.id}" class="list-group-item list-group-item-action">
         <div class="d-flex w-100 justify-content-between">
-            <h5 class="mb-1">${board.title}</h5>
+            <h5 class="mb-1">${board.titles}</h5>
             <small><fmt:parseDate value="${board.modifiedAt}" pattern = "yyyy-MM-dd'T'HH:mm" type="both"/>
             <fmt:formatDate pattern = "dd.MM.yyyy HH:mm" value="${parseDateTime}"/></small>
         </div>

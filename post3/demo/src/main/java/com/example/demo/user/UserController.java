@@ -30,7 +30,7 @@ public class UserController {
 
     //유저
     // 등록
-    @RequestMapping("/signup")
+    @PostMapping("/signup")
 
     public String signup(User user,
                          @RequestParam("password") String passwordCheck,
@@ -50,7 +50,7 @@ public class UserController {
 
 
 
-    @RequestMapping("/login")
+    @PostMapping("/login")
     public String loginV3(String nickName, String password, HttpServletResponse response, HttpServletRequest request, RedirectAttributes redirectAttributes) {
 
 

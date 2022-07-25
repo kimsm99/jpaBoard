@@ -4,7 +4,9 @@ import com.example.demo.post.Board;
 import com.example.demo.post.BoardRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
@@ -15,7 +17,7 @@ public class CommentController {
     private final BoardRepository boardRepository;
     private final CommentRepository commentRepository;
     private final CommentService commentService;
-    @RequestMapping("/insertComment")
+    @PostMapping("/insertComment")
     public String insertComment(Comment comment,
                                 @RequestParam("boardId") Long boardId,
                                 RedirectAttributes redirectAttributes) {
