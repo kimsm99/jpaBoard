@@ -24,12 +24,15 @@ public class BoardController {
     }
 
 
-    //글 등록
+
+        //글 등록
     @RequestMapping("/insertBoard")
-    public String insertBoard(@RequestParam("title") String title,@RequestParam("content") String content,@RequestParam("writer") String writer) {
-        boardService.saveBoard(title, content, writer);
+    public String insertBoard(Board board) {
+        boardService.saveBoard(board.getTitle(), board.getContent(), board.getWriter());
         return "redirect:/boardView";
     }
+
+
 
     //게시글 전체 보기
     @RequestMapping("/boardView")
@@ -75,8 +78,8 @@ public class BoardController {
     //수정
     @RequestMapping(value="/updateBoard")
 
-    public String updateBoard(@RequestParam Long id, @RequestParam("title") String title, @RequestParam("content") String content){
-        boardService.updateBoard(id, title, content);
+    public String updateBoard(Board board){
+        boardService.updateBoard(board.getId(), board.getTitle(), board.getContent());
         return "redirect:/boardView";
     }
 

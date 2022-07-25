@@ -16,11 +16,10 @@ public class CommentController {
     private final CommentRepository commentRepository;
     private final CommentService commentService;
     @RequestMapping("/insertComment")
-    public String insertComment(@RequestParam("reply") String reply,
-                                @RequestParam("replyWriter") String replyWriter,
+    public String insertComment(Comment comment,
                                 @RequestParam("boardId") Long boardId,
                                 RedirectAttributes redirectAttributes) {
-        commentService.saveComment(reply, replyWriter, boardId);
+        commentService.saveComment(comment.getReply(), comment.getReplyWriter(), boardId);
 
         redirectAttributes.addAttribute("id", boardId);
         return "redirect:/getDetail";

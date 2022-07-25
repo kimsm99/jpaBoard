@@ -81,10 +81,10 @@
                            <div>
 
                                <p>ID: <input type="text" name="nickName"></p>
-                               <p>PW: <input type="text" name="password"></p>
+                               <p>PW: <input type="password" name="password"></p>
                            </div>
                            <div>
-                               <input type="submit" class="btn btn-outline-primary" value="로그인"/>
+                               <input type="submit" class="btn btn-outline-primary"  value="로그인"/>
                        </form>
                                <button type="button" class="btn btn-outline-secondary" onclick="location.href='/signupView'">회원가입</button>
                                <button type="button" class="btn btn-success" onclick="needLogin()">글쓰기</button>
@@ -92,19 +92,28 @@
                            </div>
                        </div>
 
-
-
                 </c:otherwise>
             </c:choose>
-
-
-
-
     </div>
 
 
+<c:if test="${!empty param.checkLogin}">
+     <c:choose>
+        <c:when test="${param.checkLogin eq 1}">
+            <script type="text/javascript">
+                   alert("아이디가 틀렸습니다.");
+                   history.go(-1);
+               </script>
+        </c:when>
 
-
+         <c:when test="${param.checkLogin eq 2}">
+            <script type="text/javascript">
+                   alert("비밀번호가 틀렸습니다.");
+                   history.go(-1);
+              </script>
+        </c:when>
+    </c:choose>
+</c:if>
 
 
 <c:forEach var="board" items="${boardList}">

@@ -14,7 +14,7 @@ import java.util.regex.Pattern;
 public class UserService {
     private final UserRepository userRepository;
 
-    public String checkUser(String username,String nickName,String password,String passwordCheck) {
+    public String checkUser(String userName,String nickName,String password,String passwordCheck) {
         String error = "";
 
         // 회원 ID 중복 확인
@@ -42,10 +42,23 @@ public class UserService {
             return "비밀번호 불일치";
         }
 
-        User user = new User(username,nickName,password);
+        User user = new User(userName,nickName,password);
         userRepository.save(user);
 
         return error;
+    }
+
+    public int loginError(String nickName, String password){
+        Optional<User> foundNick = userRepository.findByNickName(nickName);
+        Optional<User> foundPass = userRepository.findByNickName(password);
+        int loginCheck = 0;
+        if(!foundNick.isPresent()){
+            loginCheck=1;
+        } else if (!foundPass.isPresent()) {
+            loginCheck=2;
+        }
+
+        return loginCheck;
     }
 
 }

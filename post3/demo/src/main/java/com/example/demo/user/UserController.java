@@ -5,6 +5,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -30,18 +31,17 @@ public class UserController {
     //유저
     // 등록
     @RequestMapping("/signup")
-    //@ResponseBody//일반 스트링 값 넘겨줌
-    public String signup(@RequestParam("username") String username,
-                         @RequestParam("nickName") String nickName,
-                         @RequestParam("password") String password,
+
+    public String signup(User user,
                          @RequestParam("password") String passwordCheck,
                          Model model) {
 
-        if(userService.checkUser(username,nickName,password,passwordCheck).equals("")){
+
+        if(userService.checkUser(user.getUserName(), user.getNickName(), user.getPassword(),passwordCheck).equals("")){
             return "redirect:/boardView";
         }
         else {
-            model.addAttribute("errortext", userService.checkUser(username,nickName,password,passwordCheck));
+            model.addAttribute("errortext", userService.checkUser(user.getUserName(), user.getNickName(), user.getPassword(),passwordCheck));
             return "signup";
         }
 
@@ -51,16 +51,18 @@ public class UserController {
 
 
     @RequestMapping("/login")
-    public String loginV3(String nickName,String password, HttpServletResponse response, HttpServletRequest request) {
+    public String loginV3(String nickName, String password, HttpServletResponse response, HttpServletRequest request, RedirectAttributes redirectAttributes) {
 
 
         System.out.println(nickName+"   "+password);
         User user = userRepository.findByNickNameAndPassword(nickName, password);
 
+
         if (user == null) {
 
             System.out.println("여기들어옴11");
-
+            int check = userService.loginError(nickName,password);
+            redirectAttributes.addAttribute("checkLogin", check);
             return "redirect:/boardView";
         }
 

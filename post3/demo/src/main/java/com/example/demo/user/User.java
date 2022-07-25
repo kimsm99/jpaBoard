@@ -2,11 +2,13 @@ package com.example.demo.user;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 import javax.persistence.*;
 
 @NoArgsConstructor
 @Getter
+@Setter
 @Entity
 public class User {
     //pk, 이름,비밀번호, id
