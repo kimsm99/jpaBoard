@@ -43,12 +43,12 @@ public class BoardTest {
 
     @Test
     @Order(2)
-    @DisplayName("게시글 저장")
+    @DisplayName("게시글 수정")
     void updateBoard() {
         //give
-        boardService.saveBoard("수정전제목","수정전내용","수정전작성자");
-        String title = "제목";
-        String content = "내용";
+//        boardService.saveBoard("수정전제목","수정전내용","수정전작성자");
+        String title = "수정 후 제목";
+        String content = "수정 후 내용";
         Long id = 1L;
         //when
         boardService.updateBoard(id, title, content);
@@ -56,11 +56,13 @@ public class BoardTest {
         Board board = boardRepository.findById(1L).orElseThrow(
                 ()->new NullPointerException("게시글 없음")
         );
-        assertEquals(board.getTitle(),"제목");
-        assertEquals(board.getContent(),"내용");
+        assertEquals(board.getTitle(),"수정 후 제목");
+        assertEquals(board.getContent(),"수정 후 내용");
         assertEquals(board.getWriter(),"작성자");
 
     }
+
+
 
 
 }

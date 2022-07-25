@@ -50,7 +50,7 @@ public class UserService {
 
     public int loginError(String nickName, String password){
         Optional<User> foundNick = userRepository.findByNickName(nickName);
-        Optional<User> foundPass = userRepository.findByNickName(password);
+        Optional<User> foundPass = userRepository.findByPassword(password);
         int loginCheck = 0;
         if(!foundNick.isPresent()){
             loginCheck=1;

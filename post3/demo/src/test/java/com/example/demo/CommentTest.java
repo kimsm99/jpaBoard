@@ -1,11 +1,19 @@
 package com.example.demo;
 
+import com.example.demo.comment.Comment;
 import com.example.demo.comment.CommentController;
 import com.example.demo.comment.CommentRepository;
 import com.example.demo.comment.CommentService;
+import com.example.demo.post.Board;
+import com.example.demo.post.BoardRepository;
+import com.example.demo.post.BoardService;
 import org.junit.jupiter.api.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+
+import java.util.List;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
@@ -15,21 +23,32 @@ public class CommentTest {
     @Autowired
     private CommentService commentService;
     @Autowired
+    private BoardService boardService;
+    @Autowired
     private CommentController commentController;
+    @Autowired
+    private BoardRepository boardRepository;
 
     @Test
     @Order(1)
     @DisplayName("댓글 저장")
     void saveComment() {
         //give
+        Board board = new Board("게시글 제목","게시글 내용","게시글 작성자");
+        boardService.saveBoard(board.getTitle(), board.getTitle(), board.getWriter());
+        Board savedBoard = boardRepository.findAll().get(0);
+        System.out.println(savedBoard.getId());
         String reply = "댓글";
         String replyWriter = "작성자";
-        Long boardId = 1L;
+
         //when
-        commentService.saveComment(reply,replyWriter,boardId);
-//        Comment commment = commentRepository.findById()
+        commentService.saveComment(reply,replyWriter, savedBoard.getId());
+        Comment comment = commentRepository.findAll().get(0);
+
 //        //then
-//        assertEquals()
+        assertEquals(comment.getReply(),"댓글");
+        assertEquals(comment.getReplyWriter(),"작성자");
+        assertEquals(comment.getBoard().getId(),savedBoard.getId());
     }
 
 }
