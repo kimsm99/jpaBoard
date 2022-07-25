@@ -27,9 +27,9 @@ public class CommentTest {
         Long boardId = 1L;
         //when
         commentService.saveComment(reply,replyWriter,boardId);
-        Comment commment = commentRepository.findById()
-        //then
-        assertEquals()
+//        Comment commment = commentRepository.findById()
+//        //then
+//        assertEquals()
     }
 
 }
