@@ -51,7 +51,7 @@ public class UserController {
 
 
     @PostMapping("/login")
-    public String loginV3(String nickName, String password, HttpServletResponse response, HttpServletRequest request, RedirectAttributes redirectAttributes) {
+    public String loginV3(String nickName, String password, HttpServletRequest request, RedirectAttributes redirectAttributes) {
 
 
         System.out.println(nickName+"   "+password);
@@ -76,7 +76,7 @@ public class UserController {
     }
 
     @RequestMapping("/logout")
-    public String logoutV3(HttpServletResponse response, HttpServletRequest request) {
+    public String logoutV3(HttpServletRequest request) {
         HttpSession session = request.getSession(false);
         if (session != null) {
             session.invalidate();

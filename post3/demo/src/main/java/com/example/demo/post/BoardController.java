@@ -56,14 +56,14 @@ public class BoardController {
 
     //삭제//왜 method delete 하면 안될까...
     @RequestMapping(value="/deleteBoard")
-    public String deleteBoard(@RequestParam Long id){
+    public String deleteBoard(@RequestParam Long id) {
         boardRepository.deleteById(id);
         return "redirect:/boardView";
     }
 
     //수정 페이지 이동
     @RequestMapping(value="/updateBoardView")
-    public ModelAndView updateBoardView(@RequestParam Long id){
+    public ModelAndView updateBoardView(@RequestParam Long id) {
         System.out.println("id"+id);
         ModelAndView mv = new ModelAndView();
         mv.setViewName("insertBoard");
@@ -73,12 +73,13 @@ public class BoardController {
         mv.addObject("board",board);
         System.out.println(board.getContent()+board.getTitle()+board.getId());
 
-        return mv;}
+        return mv;
+    }
 
     //수정
     @RequestMapping(value="/updateBoard")
 
-    public String updateBoard(Board board){
+    public String updateBoard(Board board) {
         boardService.updateBoard(board.getId(), board.getTitle(), board.getContent());
         return "redirect:/boardView";
     }

@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 public class BoardService {
     private final BoardRepository boardRepository;
     @Transactional
-    public void updateBoard(Long id,String title,String content){
+    public void updateBoard(Long id,String title,String content) {
         if(title==""||content=="") throw new IllegalArgumentException("게시글을 모두 작성해주세요");
 
         Board board = boardRepository.findById(id).orElseThrow(
@@ -19,7 +19,7 @@ public class BoardService {
         board.updateBoard(title, content);
     }
     @Transactional
-    public void saveBoard(String title, String content, String writer){
+    public void saveBoard(String title, String content, String writer) {
         if(title==""||content=="") throw new IllegalArgumentException("게시글을 모두 작성해주세요");
 
         Board board = new Board(title, content, writer);

@@ -9,12 +9,11 @@
 <meta charset="UTF-8">
 <title>JSP</title>
 </head>
+   <script type="text/javascript">
+           alert("${exception}");
+           history.go(-1);
+    </script>
 <body>
 
-
-<script type="text/javascript">
-       alert("${exception}");
-       history.go(-1);
-</script>
 </body>
 </html>

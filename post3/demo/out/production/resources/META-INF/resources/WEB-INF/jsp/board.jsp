@@ -29,19 +29,12 @@
             align-items: center;
             justify-content: center;
 
-
-
         }
         .title{
             margin-left: 1000px;
             margin-right: 900px;
         }
 
-        .signin {
-
-
-
-        }
     </style>
 
     <script>
@@ -51,82 +44,80 @@
     </script>
 </head>
 <body>
-
     <div class = "banner">
         <div class = "title">
             <h1>게시판</h1>
         </div>
 
-            <c:choose>
-                <c:when test="${!empty sessionScope.loginUser.nickName}">
-                    <div class = "sign-in">
+        <c:choose>
+            <c:when test="${!empty sessionScope.loginUser.nickName}">
+                <div class = "sign-in">
 
-                        <div>
-                            <h2>환영합니다 ${sessionScope.loginUser.nickName}님!</h2>
-                        </div>
-                        <div>
-                        <form action="<c:url value='/logout' />">
-                            <input type="submit" class="btn btn-outline-primary" value="로그아웃"/>
-                        </form>
-
-                            <button type="button" class="btn btn-success" onclick="location.href='/insertBoardView'">글쓰기</button>
-
-                        </div>
+                    <div>
+                        <h2>환영합니다 ${sessionScope.loginUser.nickName}님!</h2>
                     </div>
-                </c:when>
+                    <div>
+                    <form action="<c:url value='/logout' />">
+                        <input type="submit" class="btn btn-outline-primary" value="로그아웃"/>
+                    </form>
 
-                <c:otherwise>
-                       <div class = "sign-in">
-                       <form action="<c:url value='/login' />" method="post">
-                           <div>
+                        <button type="button" class="btn btn-success" onclick="location.href='/insertBoardView'">글쓰기</button>
 
-                               <p>ID: <input type="text" name="nickName"></p>
-                               <p>PW: <input type="password" name="password"></p>
-                           </div>
-                           <div>
-                               <input type="submit" class="btn btn-outline-primary"  value="로그인"/>
-                       </form>
-                               <button type="button" class="btn btn-outline-secondary" onclick="location.href='/signupView'">회원가입</button>
-                               <button type="button" class="btn btn-success" onclick="needLogin()">글쓰기</button>
+                    </div>
+                </div>
+            </c:when>
 
-                           </div>
-                       </div>
+            <c:otherwise>
+               <div class = "sign-in">
+               <form action="<c:url value='/login' />" method="post">
+                   <div>
 
-                </c:otherwise>
-            </c:choose>
+                       <p>ID: <input type="text" name="nickName"></p>
+                       <p>PW: <input type="password" name="password"></p>
+                   </div>
+                   <div>
+                       <input type="submit" class="btn btn-outline-primary"  value="로그인"/>
+               </form>
+                       <button type="button" class="btn btn-outline-secondary" onclick="location.href='/signupView'">회원가입</button>
+                       <button type="button" class="btn btn-success" onclick="needLogin()">글쓰기</button>
+
+                   </div>
+               </div>
+            </c:otherwise>
+        </c:choose>
     </div>
 
 
-<c:if test="${!empty param.checkLogin}">
-     <c:choose>
-        <c:when test="${param.checkLogin eq 1}">
-            <script type="text/javascript">
-                   alert("아이디가 틀렸습니다.");
-                   history.go(-1);
-               </script>
-        </c:when>
+    <c:if test="${!empty param.checkLogin}">
+         <c:choose>
+            <c:when test="${param.checkLogin eq 1}">
+                <script type="text/javascript">
+                       alert("아이디가 틀렸습니다.");
+                       history.go(-1);
+                   </script>
+            </c:when>
 
-         <c:when test="${param.checkLogin eq 2}">
-            <script type="text/javascript">
-                   alert("비밀번호가 틀렸습니다.");
-                   history.go(-1);
-              </script>
-        </c:when>
-    </c:choose>
-</c:if>
+             <c:when test="${param.checkLogin eq 2}">
+                <script type="text/javascript">
+                       alert("비밀번호가 틀렸습니다.");
+                       history.go(-1);
+                  </script>
+            </c:when>
+        </c:choose>
+    </c:if>
 
 
-<c:forEach var="board" items="${boardList}">
-    <a href="/getDetail?id=${board.id}" class="list-group-item list-group-item-action">
-        <div class="d-flex w-100 justify-content-between">
-            <h5 class="mb-1">${board.titles}</h5>
-            <small><fmt:parseDate value="${board.modifiedAt}" pattern = "yyyy-MM-dd'T'HH:mm" type="both"/>
-            <fmt:formatDate pattern = "dd.MM.yyyy HH:mm" value="${parseDateTime}"/></small>
-        </div>
-        <p class="mb-1">${board.content}</p>
-        <small>${board.writer}</small>
-    </a>
-</c:forEach>
+    <c:forEach var="board" items="${boardList}">
+        <a href="/getDetail?id=${board.id}" class="list-group-item list-group-item-action">
+            <div class="d-flex w-100 justify-content-between">
+                <h5 class="mb-1">${board.title}</h5>
+                <small><fmt:parseDate value="${board.modifiedAt}" pattern = "yyyy-MM-dd'T'HH:mm" type="both"/>
+                <fmt:formatDate pattern = "dd.MM.yyyy HH:mm" value="${parseDateTime}"/></small>
+            </div>
+            <p class="mb-1">${board.content}</p>
+            <small>${board.writer}</small>
+        </a>
+    </c:forEach>
 
 
 </body>

@@ -52,6 +52,7 @@ public class UserService {
         Optional<User> foundNick = userRepository.findByNickName(nickName);
         Optional<User> foundPass = userRepository.findByPassword(password);
         int loginCheck = 0;
+
         if(!foundNick.isPresent()){
             loginCheck=1;
         } else if (!foundPass.isPresent()) {

@@ -29,7 +29,9 @@ public class CommentController {
 
 
     @RequestMapping(value="/deleteComment")
-    public String deleteComment(@RequestParam Long boardId, @RequestParam Long id, RedirectAttributes redirectAttributes){
+    public String deleteComment(@RequestParam Long boardId,
+                                @RequestParam Long id,
+                                RedirectAttributes redirectAttributes) {
         commentRepository.deleteById(id);
         redirectAttributes.addAttribute("id", boardId);
         return "redirect:/getDetail";
