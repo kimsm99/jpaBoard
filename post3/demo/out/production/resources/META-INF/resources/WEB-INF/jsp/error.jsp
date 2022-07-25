@@ -12,8 +12,6 @@
 <body>
 빈칸이 있습니다.
 
-<%=exception.getMessage%>
-
 <input type="button" value="BACK" onClick="history.go(-1)">
 
 </body>

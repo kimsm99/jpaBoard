@@ -30,8 +30,8 @@ public class UserService {
             return "중복된 pw 입니다.";
         }
 
-        if (nickName.length() < 3) {
-            return "닉네임을 3자 이상 입력하세요";
+        if (nickName.length() < 4) {
+            return "닉네임을 4자 이상 입력하세요";
         } else if (!Pattern.matches(pattern, nickName)) {
             return "알파벳 대소문자와 숫자로만 입력하세요";
         } else if (password.length() < 4) {

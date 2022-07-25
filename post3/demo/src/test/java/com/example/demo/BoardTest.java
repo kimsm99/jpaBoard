@@ -46,7 +46,6 @@ public class BoardTest {
     @DisplayName("게시글 수정")
     void updateBoard() {
         //give
-//        boardService.saveBoard("수정전제목","수정전내용","수정전작성자");
         String title = "수정 후 제목";
         String content = "수정 후 내용";
         Long id = 1L;
@@ -62,7 +61,87 @@ public class BoardTest {
 
     }
 
+    @Nested
+    @DisplayName("Bad Test")
+    class wrong{
+        @Test
+        @Order(1)
+        @DisplayName("저장- 제목 없음")
+        void wrongSaveTitle() {
+            //give
+            String title = "";
+            String content = "내용2";
+            String writer = "작성자";
+            //when
+            try{
+                boardService.saveBoard(title,content,writer);
+            } catch (NullPointerException e) {
+                Assertions.assertEquals("빈칸 있음", e.getMessage());
+            }
+
+        }
+
+        @Test
+        @Order(2)
+        @DisplayName("저장- 내용 없음")
+        void wrongSaveContent() {
+            //give
+            String title = "제목2";
+            String content = "";
+            String writer = "작성자";
+            //when
+            try{
+                boardService.saveBoard(title,content,writer);
+            } catch (NullPointerException e) {
+                Assertions.assertEquals("빈칸 있음", e.getMessage());
+            }
+
+        }
+
+        @Test
+        @Order(3)
+        @DisplayName("수정- 제목 없음")
+        void wrongUpdateTitle() {
+            //give
+            String title = "수정 후 제목ㅠㅠ";
+            String content = "";
+            Long id = 1L;
+
+            //when
+            try{
+                boardService.updateBoard(id, title, content);
+            } catch (NullPointerException e) {
+                Assertions.assertEquals("빈칸 있음", e.getMessage());
+            }
+
+        }
+
+        @Test
+        @Order(4)
+        @DisplayName("수정- 내용 없음")
+        void wrongUpdateContent() {
+            //give
+            String title = "";
+            String content = "수정 후 내용 ㅠㅠ";
+            Long id = 1L;
+            //when
+
+
+            //when
+            try{
+                boardService.updateBoard(id, title, content);
+            } catch (NullPointerException e) {
+                Assertions.assertEquals("빈칸 있음", e.getMessage());
+            }
+
+        }
 
 
 
+    }
 }
+
+
+
+
+

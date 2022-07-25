@@ -51,4 +51,26 @@ public class CommentTest {
         assertEquals(comment.getBoard().getId(),savedBoard.getId());
     }
 
+    @Nested
+    @DisplayName("Bad Test")
+    class wrong{
+        @Test
+        @Order(1)
+        @DisplayName("저장- 제목 없음")
+        void wrongSaveReply() {
+            //give
+            String reply = "";
+            String replyWriter = "작성자";
+            //when
+            try{
+                commentService.saveComment(reply,replyWriter, 1L);
+            } catch (NullPointerException e) {
+                Assertions.assertEquals("빈칸 있음", e.getMessage());
+            }
+
+        }
+
+
+    }
+
 }
