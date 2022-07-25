@@ -11,7 +11,7 @@ public class BoardService {
     private final BoardRepository boardRepository;
     @Transactional
     public void updateBoard(Long id,String title,String content){
-        if(title==""||content=="") throw new NullPointerException("빈칸 있음");
+        if(title==""||content=="") throw new IllegalArgumentException("게시글을 모두 작성해주세요");
 
         Board board = boardRepository.findById(id).orElseThrow(
                 ()->new NullPointerException("게시글 없음")
@@ -20,7 +20,7 @@ public class BoardService {
     }
     @Transactional
     public void saveBoard(String title, String content, String writer){
-        if(title==""||content=="") throw new NullPointerException("빈칸 있음");
+        if(title==""||content=="") throw new IllegalArgumentException("게시글을 모두 작성해주세요");
 
         Board board = new Board(title, content, writer);
         boardRepository.save(board);

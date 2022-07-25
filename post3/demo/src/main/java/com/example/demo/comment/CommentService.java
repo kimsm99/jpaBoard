@@ -21,7 +21,7 @@ public class CommentService {
                 ()-> new NullPointerException("게시글이 없습니다.")
         );
 
-        if(reply=="") throw new NullPointerException("빈칸 있음");
+        if(reply=="") throw new IllegalArgumentException("댓글을 작성해주세요");
 
         Comment comment = new Comment(reply,replyWriter,board);
         commentRepository.save(comment);

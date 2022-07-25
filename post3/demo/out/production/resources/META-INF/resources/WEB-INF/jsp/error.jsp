@@ -10,9 +10,11 @@
 <title>JSP</title>
 </head>
 <body>
-빈칸이 있습니다.
 
-<input type="button" value="BACK" onClick="history.go(-1)">
 
+<script type="text/javascript">
+       alert("${exception}");
+       history.go(-1);
+</script>
 </body>
 </html>

@@ -76,7 +76,7 @@ public class BoardTest {
             try{
                 boardService.saveBoard(title,content,writer);
             } catch (NullPointerException e) {
-                Assertions.assertEquals("빈칸 있음", e.getMessage());
+                Assertions.assertEquals("게시글을 모두 작성해주세요", e.getMessage());
             }
 
         }
@@ -93,7 +93,7 @@ public class BoardTest {
             try{
                 boardService.saveBoard(title,content,writer);
             } catch (NullPointerException e) {
-                Assertions.assertEquals("빈칸 있음", e.getMessage());
+                Assertions.assertEquals("게시글을 모두 작성해주세요", e.getMessage());
             }
 
         }
@@ -111,7 +111,7 @@ public class BoardTest {
             try{
                 boardService.updateBoard(id, title, content);
             } catch (NullPointerException e) {
-                Assertions.assertEquals("빈칸 있음", e.getMessage());
+                Assertions.assertEquals("게시글을 모두 작성해주세요", e.getMessage());
             }
 
         }
@@ -131,7 +131,7 @@ public class BoardTest {
             try{
                 boardService.updateBoard(id, title, content);
             } catch (NullPointerException e) {
-                Assertions.assertEquals("빈칸 있음", e.getMessage());
+                Assertions.assertEquals("게시글을 모두 작성해주세요", e.getMessage());
             }
 
         }

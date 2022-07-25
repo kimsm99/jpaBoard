@@ -65,7 +65,7 @@ public class CommentTest {
             try{
                 commentService.saveComment(reply,replyWriter, 1L);
             } catch (NullPointerException e) {
-                Assertions.assertEquals("빈칸 있음", e.getMessage());
+                Assertions.assertEquals("댓글을 작성해주세요", e.getMessage());
             }
 
         }
