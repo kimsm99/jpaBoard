@@ -36,12 +36,12 @@ public class Board extends Timestamped {
     public Board(String title, String content, String writer){
         this.title = title;
         this.content = content;
-        this.writer=writer;
+        this.writer = writer;
     }
 
     public void updateBoard(String title, String content){
-        this.title=title;
-        this.content=content;
+        this.title = title;
+        this.content = content;
     }
 
 }
