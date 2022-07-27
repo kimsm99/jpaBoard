@@ -6,3 +6,6 @@ pluginManagement {
 	}
 }
 rootProject.name = 'demo'
+include 'demo.db'
+include 'demo.service'
+
