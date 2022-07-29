@@ -4,60 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cc47866a-2d6e-470e-b222-65e289829e82" name="변경" comment="">
-      <change beforePath="$PROJECT_DIR$/demo/.gradle/7.4.1/checksums/checksums.lock" beforeDir="false" afterPath="$PROJECT_DIR$/demo/.gradle/7.4.1/checksums/checksums.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo/.gradle/7.4.1/dependencies-accessors/dependencies-accessors.lock" beforeDir="false" afterPath="$PROJECT_DIR$/demo/.gradle/7.4.1/dependencies-accessors/dependencies-accessors.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo/.gradle/7.4.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/demo/.gradle/7.4.1/executionHistory/executionHistory.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo/.gradle/7.4.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/demo/.gradle/7.4.1/executionHistory/executionHistory.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo/.gradle/7.4.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/demo/.gradle/7.4.1/fileHashes/fileHashes.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo/.gradle/7.4.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/demo/.gradle/7.4.1/fileHashes/fileHashes.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo/.gradle/7.4.1/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/demo/.gradle/7.4.1/fileHashes/resourceHashesCache.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/demo/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/demo/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo/.gradle/file-system.probe" beforeDir="false" afterPath="$PROJECT_DIR$/demo/.gradle/file-system.probe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo/demo.db/out/production/classes/com/example/demo/Timestamped.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo/demo.db/out/production/classes/com/example/demo/entity/Board.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo/demo.db/out/production/classes/com/example/demo/entity/Comment.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo/demo.db/out/production/classes/com/example/demo/entity/User.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo/demo.db/out/production/classes/com/example/demo/repo/BoardRepository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo/demo.db/out/production/classes/com/example/demo/repo/CommentRepository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo/demo.db/out/production/classes/com/example/demo/repo/UserRepository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo/demo.db/out/production/resources/application.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo/demo.service/out/production/classes/com/example/demo/DemoServiceApplication.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo/demo.service/out/production/classes/com/example/demo/comment/CommentController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo/demo.service/out/production/classes/com/example/demo/comment/CommentService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo/demo.service/out/production/classes/com/example/demo/exception/exception.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo/demo.service/out/production/classes/com/example/demo/post/BoardController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo/demo.service/out/production/classes/com/example/demo/post/BoardService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo/demo.service/out/production/classes/com/example/demo/user/UserController$SessionConst.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo/demo.service/out/production/classes/com/example/demo/user/UserController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo/demo.service/out/production/classes/com/example/demo/user/UserService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo/demo.service/out/production/resources/META-INF/resources/WEB-INF/jsp/board.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo/demo.service/out/production/resources/META-INF/resources/WEB-INF/jsp/detail.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo/demo.service/out/production/resources/META-INF/resources/WEB-INF/jsp/error.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo/demo.service/out/production/resources/META-INF/resources/WEB-INF/jsp/insertBoard.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo/demo.service/out/production/resources/META-INF/resources/WEB-INF/jsp/signup.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo/demo.service/out/production/resources/application.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo/demo.service/out/test/classes/com/example/demo/BoardTest$wrong.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo/demo.service/out/test/classes/com/example/demo/BoardTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo/demo.service/out/test/classes/com/example/demo/CommentTest$wrong.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo/demo.service/out/test/classes/com/example/demo/CommentTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo/demo.service/out/test/classes/com/example/demo/DemoApplicationTests.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo/demo.service/out/test/classes/com/example/demo/UserTest$wrong$login.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo/demo.service/out/test/classes/com/example/demo/UserTest$wrong$signup.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo/demo.service/out/test/classes/com/example/demo/UserTest$wrong.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo/demo.service/out/test/classes/com/example/demo/UserTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo/demo.service/src/main/java/com/example/demo/DemoServiceApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/demo/demo.service/src/main/java/com/example/demo/DemoApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo/out/test/classes/com/example/demo/BoardTest$wrong.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo/out/test/classes/com/example/demo/BoardTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo/out/test/classes/com/example/demo/CommentTest$wrong.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo/out/test/classes/com/example/demo/CommentTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo/out/test/classes/com/example/demo/DemoApplicationTests.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo/out/test/classes/com/example/demo/UserTest$wrong$login.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo/out/test/classes/com/example/demo/UserTest$wrong$signup.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo/out/test/classes/com/example/demo/UserTest$wrong.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo/out/test/classes/com/example/demo/UserTest.class" beforeDir="false" />
-    </list>
+    <list default="true" id="cc47866a-2d6e-470e-b222-65e289829e82" name="변경" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
