@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.example.demo.DemoApplicationTests" tests="1" skipped="0" failures="0" errors="0" timestamp="2022-07-29T06:59:23" hostname="DESKTOP-JV52KDS" time="0.005">
+  <properties/>
+  <testcase name="contextLoads()" classname="com.example.demo.DemoApplicationTests" time="0.005"/>
+  <system-out><![CDATA[2022-07-29 15:59:22.571  INFO 12976 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Neither @ContextConfiguration nor @ContextHierarchy found for test class [com.example.demo.DemoApplicationTests], using SpringBootContextLoader
+2022-07-29 15:59:22.572  INFO 12976 --- [    Test worker] o.s.t.c.support.AbstractContextLoader    : Could not detect default resource locations for test class [com.example.demo.DemoApplicationTests]: no resource found for suffixes {-context.xml, Context.groovy}.
+2022-07-29 15:59:22.572  INFO 12976 --- [    Test worker] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.example.demo.DemoApplicationTests]: DemoApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2022-07-29 15:59:22.573  INFO 12976 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.example.demo.DemoServiceApplication for test class com.example.demo.DemoApplicationTests
+2022-07-29 15:59:22.575  INFO 12976 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.event.ApplicationEventsTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener, org.springframework.test.context.event.EventPublishingTestExecutionListener]
+2022-07-29 15:59:22.575  INFO 12976 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@6c8d8b60, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@4fa6fb7f, org.springframework.test.context.event.ApplicationEventsTestExecutionListener@2520010e, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@163fbbc9, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@1669f4e5, org.springframework.test.context.support.DirtiesContextTestExecutionListener@6e6c8854, org.springframework.test.context.transaction.TransactionalTestExecutionListener@4be1dce6, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@206bd7a0, org.springframework.test.context.event.EventPublishingTestExecutionListener@79fcd194, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@73d8c8d7, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@361b3ca6, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@48333b12, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@575c23f1, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener@62f7d7bd, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@de63949]
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::       (v2.7.2-SNAPSHOT)
+
+2022-07-29 15:59:22.605  INFO 12976 --- [    Test worker] com.example.demo.DemoApplicationTests    : Starting DemoApplicationTests using Java 1.8.0_332 on DESKTOP-JV52KDS with PID 12976 (started by DESKTOP-03 in C:\Users\DESKTOP-03\OneDrive\문서\Board\demo\demo.service)
+2022-07-29 15:59:22.606  INFO 12976 --- [    Test worker] com.example.demo.DemoApplicationTests    : No active profile set, falling back to 1 default profile: "default"
+2022-07-29 15:59:22.758  INFO 12976 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-07-29 15:59:22.789  INFO 12976 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 30 ms. Found 3 JPA repository interfaces.
+2022-07-29 15:59:22.935  INFO 12976 --- [    Test worker] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-07-29 15:59:22.941  INFO 12976 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Starting...
+2022-07-29 15:59:22.944  INFO 12976 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Start completed.
+2022-07-29 15:59:22.945  INFO 12976 --- [    Test worker] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+Hibernate: alter table `comment` drop foreign key `FKqf9xb1w53v8y6hshq62aah3ob`
+Hibernate: drop table if exists `board`
+Hibernate: drop table if exists `comment`
+Hibernate: drop table if exists `users`
+Hibernate: drop table if exists `hibernate_sequence`
+Hibernate: create table `board` (`id` bigint not null, `created_at` datetime, `modified_at` datetime, `content` varchar(255), `title` varchar(255), `writer` varchar(255), primary key (`id`)) engine=InnoDB
+Hibernate: create table `comment` (`id` bigint not null, `reply` varchar(255), `reply_writer` varchar(255), `post_id` bigint, primary key (`id`)) engine=InnoDB
+Hibernate: create table `users` (`id` bigint not null, `nick_name` varchar(255), `password` varchar(255), `user_name` varchar(255), primary key (`id`)) engine=InnoDB
+Hibernate: create table `hibernate_sequence` (`next_val` bigint) engine=InnoDB
+Hibernate: insert into `hibernate_sequence` values ( 1 )
+Hibernate: alter table `comment` add constraint `FKqf9xb1w53v8y6hshq62aah3ob` foreign key (`post_id`) references `board` (`id`)
+2022-07-29 15:59:23.092  INFO 12976 --- [    Test worker] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-07-29 15:59:23.092  INFO 12976 --- [    Test worker] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-07-29 15:59:23.283  WARN 12976 --- [    Test worker] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-07-29 15:59:23.619  INFO 12976 --- [    Test worker] com.example.demo.DemoApplicationTests    : Started DemoApplicationTests in 1.038 seconds (JVM running for 7.526)
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
