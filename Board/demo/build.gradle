@@ -19,6 +19,9 @@ subprojects {
 	apply plugin: 'java'
 	apply plugin: 'org.springframework.boot'
 	apply plugin: 'io.spring.dependency-management'
+	//api를 위해 필요
+	apply plugin: 'java-library'
+
 
 	group = 'com.example'
 	version = '0.0.1-SNAPSHOT'
@@ -55,12 +58,8 @@ subprojects {
 project(':demo.service') {
 	// user 모듈에만 필요한 라이브러리가 발생하면 이곳에 추가한다.
 	dependencies {
-		compileOnly project(':demo.db')
 		//의존성 추가
-//		implementation로 의존성을 추가했더니 jpa가 안됨
-//		이 경우 demo.db의 코드들만 노출되고 common의 dependency들은 노출되지 않음
-
-//		implementation project(':demo.db')
+		implementation project(':demo.db')
 
 	}
 }
