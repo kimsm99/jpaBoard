@@ -16,5 +16,9 @@ public interface BoardRepository extends JpaRepository<Board, Long> {
     @Query(value = "SELECT b FROM Board b WHERE b.title LIKE %:searchWord% OR b.content LIKE %:searchWord% ORDER BY b.modifiedAt DESC")
     List<Board> findAllSearch(String searchWord);
 
-    Page<Board> findAll(Pageable pageable);
+
+    @Query(value = "SELECT b FROM Board b WHERE b.title LIKE %:searchWord% OR b.content LIKE %:searchWord% ORDER BY b.modifiedAt DESC")
+    Page<Board> findAllSearch(String searchWord, Pageable pageable);
+
+    Page<Board> findAllByOrderByModifiedAtDesc(Pageable pageable);
 }

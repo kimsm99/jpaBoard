@@ -114,7 +114,7 @@
   <input class="btn btn-outline-secondary" id="button-addon2" type="submit" value="검색"/>
 </div>
 </form>
-    <c:forEach var="board" items="${boardList}">
+    <c:forEach var="board" items="${boardList.content}">
         <a href="/getDetail?id=${board.id}" class="list-group-item list-group-item-action">
             <div class="d-flex w-100 justify-content-between">
                 <h5 class="mb-1">${board.title}</h5>
@@ -126,6 +126,29 @@
         </a>
     </c:forEach>
 
+
+    <%--  페이지  --%>
+    <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups" style="margin: auto">
+        <div class="btn-group me-2" role="group" aria-label="First group">
+<%--            <c:if test="${boardList.first ne true}">--%>
+<%--            <button type="button" class="btn btn-primary"><</button>--%>
+<%--            </c:if>--%>
+
+
+            <c:if test="${boardList.totalPages ne 0}">
+            <c:forEach var="i" begin="1" end="${boardList.totalPages}" step="1">
+
+            <button onclick="location.href='/boardView?searchWord=${param.searchWord}&page=${i}'" type="button" class="btn btn-primary">${i}</button>
+            </c:forEach>
+            </c:if>
+
+
+
+<%--            <c:if test="${boardList.last ne true}">--%>
+<%--            <button type="button" class="btn btn-primary">></button>--%>
+<%--            </c:if>--%>
+        </div>
+    </div>
 
 </body>
 </html>

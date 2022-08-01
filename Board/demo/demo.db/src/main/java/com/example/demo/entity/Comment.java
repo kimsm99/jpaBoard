@@ -10,6 +10,7 @@ import javax.persistence.*;
 @Getter
 @Setter
 @Entity
+@Table(name = "COMMENTS")
 public class Comment {
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Id

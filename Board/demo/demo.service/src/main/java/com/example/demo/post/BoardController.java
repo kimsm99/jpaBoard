@@ -53,22 +53,39 @@ public class BoardController {
 //    }
 
 
-            //페이징하기
+//            //페이징하기
+//        //게시글 전체 보기
+//        @GetMapping(value ="/boardView")
+//        public String getBoardList(@RequestParam(defaultValue = "") String searchWord, Model model) {
+//            List<Board> boardList;
+//            if(searchWord.equals("")||searchWord.equals(null)){
+//                boardList = boardRepository.findAllByOrderByModifiedAtDesc();
+//            } else {
+//                boardList = boardRepository.findAllSearch(searchWord);
+//            }
+//
+////        Page<Board> boardList = boardService.getBoardPage(page);
+//
+//            model.addAttribute("boardList", boardList);
+//            return "board";
+//        }
+
+                //페이징하기
         //게시글 전체 보기
         @GetMapping(value ="/boardView")
-        public String getBoardList(@RequestParam(defaultValue = "") String searchWord, Model model) {
-            List<Board> boardList;
+        public String getBoardList(@RequestParam(defaultValue = "") String searchWord, Model model, @RequestParam(defaultValue = "1") int page) {
+            Pageable pageable = PageRequest.of(page-1, 10);
+            Page<Board> boardList;
             if(searchWord.equals("")||searchWord.equals(null)){
-                boardList = boardRepository.findAllByOrderByModifiedAtDesc();
+                boardList = boardRepository.findAllByOrderByModifiedAtDesc(pageable);
             } else {
-                boardList = boardRepository.findAllSearch(searchWord);
+                boardList = boardRepository.findAllSearch(searchWord, pageable);
             }
-
-//        Page<Board> boardList = boardService.getBoardPage(page);
 
             model.addAttribute("boardList", boardList);
             return "board";
         }
+
 
 
     //상세조회
