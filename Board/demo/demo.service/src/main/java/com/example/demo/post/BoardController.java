@@ -70,6 +70,7 @@ public class BoardController {
             return "board";
         }
 
+
     //상세조회
     @GetMapping("/getDetail")
     public String getBoard(@RequestParam Long id, Model model) {

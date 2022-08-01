@@ -1,5 +1,5 @@
 
-
+//main 메서드 없이 라이브러리 역할을 하는 모듈이므로 BootJar이 아닌 jar파일로 생성되고 다른 프로젝트에 첨부
 bootJar {
     enabled = false
 }
@@ -11,6 +11,7 @@ dependencies {
 //    runtimeOnly 'com.h2database:h2'
     runtimeOnly 'mysql:mysql-connector-java'
     compileOnly 'org.mariadb.jdbc:mariadb-java-client:2.7.2'
+
 }
 
 //task wrapper(type: Wrapper) {
