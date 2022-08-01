@@ -5,10 +5,15 @@ package com.example.demo.post;
 import com.example.demo.entity.Board;
 import com.example.demo.repo.BoardRepository;
 import lombok.RequiredArgsConstructor;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
+
+
 import java.util.List;
 
 @Controller
@@ -25,7 +30,7 @@ public class BoardController {
 
 
 
-        //글 등록
+    //글 등록
     @PostMapping("/insertBoard")
     public String insertBoard(Board board) {
         boardService.saveBoard(board.getTitle(), board.getContent(), board.getWriter());
@@ -34,14 +39,36 @@ public class BoardController {
 
 
 
-    //게시글 전체 보기
-    @GetMapping(value ="/boardView")
-    public String getBoardList(Model model) {
-        List<Board> boardList = boardRepository.findAllByOrderByModifiedAtDesc();
-        model.addAttribute("boardList", boardList);
-        return "board";
+//    //페이징하기
+//    //게시글 전체 보기
+//    @GetMapping(value ="/boardView")
+//    public String getBoardList(@RequestParam String searchWord, Model model) {
+//
+//        List<Board> boardList = boardRepository.findAllByOrderByModifiedAtDesc();
+////        Page<Board> boardList = boardService.getBoardPage(page);
+//        model.addAttribute("boardList", boardList);
+//        return "board";
+//
+//
+//    }
 
-    }
+
+            //페이징하기
+        //게시글 전체 보기
+        @GetMapping(value ="/boardView")
+        public String getBoardList(@RequestParam(defaultValue = "") String searchWord, Model model) {
+            List<Board> boardList;
+            if(searchWord.equals("")||searchWord.equals(null)){
+                boardList = boardRepository.findAllByOrderByModifiedAtDesc();
+            } else {
+                boardList = boardRepository.findAllSearch(searchWord);
+            }
+
+//        Page<Board> boardList = boardService.getBoardPage(page);
+
+            model.addAttribute("boardList", boardList);
+            return "board";
+        }
 
     //상세조회
     @GetMapping("/getDetail")
@@ -83,6 +110,8 @@ public class BoardController {
         boardService.updateBoard(board.getId(), board.getTitle(), board.getContent());
         return "redirect:/boardView";
     }
+
+    //검색 기능
 
 
 

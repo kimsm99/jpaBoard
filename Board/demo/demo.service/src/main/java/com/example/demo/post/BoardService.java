@@ -3,6 +3,9 @@ package com.example.demo.post;
 import com.example.demo.entity.Board;
 import com.example.demo.repo.BoardRepository;
 import lombok.RequiredArgsConstructor;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -30,5 +33,9 @@ public class BoardService {
 
 
 
-
+//    public Page<Board> getBoardPage(int page) {
+//        Pageable pageable = PageRequest.of(page-1, 10);
+//        return boardRepository.findAll(pageable);
+//
+//    }
 }

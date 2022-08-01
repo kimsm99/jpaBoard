@@ -46,8 +46,9 @@
 </head>
 <body>
     <div class = "banner">
-        <div class = "title">
-            <h1>게시판</h1>
+
+        <div class = "title" >
+            <h1 onclick="location.href='/boardView'">게시판</h1>
         </div>
 
         <c:choose>
@@ -106,8 +107,13 @@
             </c:when>
         </c:choose>
     </c:if>
+<form action="/boardView" method="get">
+<div class="input-group mb-3">
+  <input type="text" name="searchWord" class="form-control" placeholder="Recipient's username" aria-label="Recipient's username" aria-describedby="button-addon2">
 
-
+  <input class="btn btn-outline-secondary" id="button-addon2" type="submit" value="검색"/>
+</div>
+</form>
     <c:forEach var="board" items="${boardList}">
         <a href="/getDetail?id=${board.id}" class="list-group-item list-group-item-action">
             <div class="d-flex w-100 justify-content-between">
